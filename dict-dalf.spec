@@ -7,6 +7,7 @@ Release:	1
 License:	unknown
 Group:		Applications/Dictionaries
 Source0:	http://www.chat.ru/~muller_dic/dalf.gz
+# Source0-md5:	395ca06b4e38399e1a91bf89d51ae289
 Patch0:		%{dictname}.patch
 URL:		http://www.chat.ru/~muller_dic/
 BuildRequires:	dictfmt
