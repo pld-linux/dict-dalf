@@ -28,7 +28,7 @@ z opcj╠ --locale ru_RU.KOI8-R, ©eby mСc go u©ywaФ.
 Словарь Даля, переработанный из CD источника "Библиотека в Кармане".
 
 %prep
-%setup -c -T
+%setup -q -c -T
 %{__gzip} -dc %{SOURCE0} > dalf
 %patch0 -p0
 
