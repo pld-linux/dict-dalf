@@ -16,10 +16,12 @@ Requires:	%{_sysconfdir}/dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Russian monolingual dictionary for dictd.
+Russian monolingual dictionary for dictd encoded in koi8-r. Start
+server with --locale ru_RU.KOI8-R option in order to use it.
 
 %description -l pl
-SЁownik rosyjsko-rosyjski dla dictd.
+SЁownik rosyjsko-rosyjski dla dictd kodowany w koi8-r. Uruchom serwer
+z opcj╠ --locale ru_RU.KOI8-R, ©eby mСc go u©ywaФ.
 
 %description -l ru
 Словарь Даля, переработанный из CD источника "Библиотека в Кармане".
@@ -31,7 +33,7 @@ SЁownik rosyjsko-rosyjski dla dictd.
 
 %build
 LC_ALL=ru_RU.KOI8-R perl -ne 'use locale; /^(.*?)[\.,;\?]*  (.*)\n/; $def=$2; $word=$1; $word=~s/[\?,]+ /|/g; print ":".lc($word).":\n$def\n"' < dalf | \
-	dictfmt -j -u http://www.chat.ru/~muller_dic/ -s %{dictname} --locale ru_RU.KOI8-R --headword-separator \| dalf
+	dictfmt -j -u http://www.chat.ru/~muller_dic/ -s %{dictname} --locale ru_RU.KOI8-R --headword-separator \| %{dictname}
 dictzip %{dictname}.dict
 
 %install
