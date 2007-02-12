@@ -1,6 +1,6 @@
 %define		dictname dalf
 Summary:	Russian monolingual dictionary dalf for dictd
-Summary(pl.UTF-8):   Słownik rosyjsko-rosyjski dalf dla dictd
+Summary(pl.UTF-8):	Słownik rosyjsko-rosyjski dalf dla dictd
 Name:		dict-%{dictname}
 Version:	1.0
 Release:	2
