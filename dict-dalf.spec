@@ -1,6 +1,6 @@
 %define		dictname dalf
 Summary:	Russian monolingual dictionary dalf for dictd
-Summary(pl):	SЁownik rosyjsko-rosyjski dalf dla dictd
+Summary(pl.UTF-8):   Sе┌ownik rosyjsko-rosyjski dalf dla dictd
 Name:		dict-%{dictname}
 Version:	1.0
 Release:	2
@@ -20,12 +20,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Russian monolingual dictionary for dictd encoded in koi8-r. Start
 server with --locale ru_RU.KOI8-R option in order to use it.
 
-%description -l pl
-SЁownik rosyjsko-rosyjski dla dictd kodowany w koi8-r. Uruchom serwer
-z opcj╠ --locale ru_RU.KOI8-R, ©eby mСc go u©ywaФ.
+%description -l pl.UTF-8
+Sе┌ownik rosyjsko-rosyjski dla dictd kodowany w koi8-r. Uruchom serwer
+z opcjд┘ --locale ru_RU.KOI8-R, е╪eby mцЁc go uе╪ywaд┤.
 
-%description -l ru
-Словарь Даля, переработанный из CD источника "Библиотека в Кармане".
+%description -l ru.UTF-8
+п║п╩п╬п╡п╟я─я▄ п■п╟п╩я▐, п©п╣я─п╣я─п╟п╠п╬я┌п╟п╫п╫я▀п╧ п╦п╥ CD п╦я│я┌п╬я┤п╫п╦п╨п╟ "п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ п╡ п п╟я─п╪п╟п╫п╣".
 
 %prep
 %setup -q -c -T
