@@ -3,7 +3,7 @@ Summary:	Russian monolingual dictionary dalf for dictd
 Summary(pl.UTF-8):	Słownik rosyjsko-rosyjski dalf dla dictd
 Name:		dict-%{dictname}
 Version:	1.0
-Release:	2
+Release:	3
 License:	unknown
 Group:		Applications/Dictionaries
 Source0:	http://www.chat.ru/~muller_dic/dalf.gz
@@ -12,6 +12,7 @@ Patch0:		%{dictname}.patch
 URL:		http://www.chat.ru/~muller_dic/
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -53,13 +54,11 @@ mv %{dictname}.* $RPM_BUILD_ROOT%{_datadir}/dictd
 rm -rf $RPM_BUILD_ROOT
 
 %post
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2
-fi
+%service -q dictd restart
 
 %postun
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2 || true
+if [ "$1" = 0 ]; then
+	%service -q dictd restart
 fi
 
 %files
