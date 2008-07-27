@@ -3,7 +3,7 @@ Summary:	Russian monolingual dictionary dalf for dictd
 Summary(pl.UTF-8):	Słownik rosyjsko-rosyjski dalf dla dictd
 Name:		dict-%{dictname}
 Version:	1.0
-Release:	3
+Release:	4
 License:	unknown
 Group:		Applications/Dictionaries
 Source0:	http://www.chat.ru/~muller_dic/dalf.gz
