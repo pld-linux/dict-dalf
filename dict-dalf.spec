@@ -31,7 +31,7 @@ z opcją --locale ru_RU.KOI8-R, żeby móc go używać.
 %prep
 %setup -q -c -T
 %{__gzip} -dc %{SOURCE0} > dalf
-%patch0 -p0
+%patch -P0 -p0
 
 %build
 LC_ALL=ru_RU.KOI8-R perl -ne 'use locale; /^(.*?)[\.,;\?]*  (.*)\n/; $def=$2; $word=$1; $word=~s/[\?,]+ /|/g; print ":".lc($word).":\n$def\n"' < dalf | \
